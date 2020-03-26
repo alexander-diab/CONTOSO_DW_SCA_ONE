@@ -1,36 +1,15 @@
-# Starter pipeline
 - task: RedgateSqlChangeAutomationBuild@4
   inputs:
     operation: 'Build SQL Change Automation Project'
-    sqlProj: 'CONTOSO_DW_SCA_ONE.sqlproj'
-    packageName: 'CONTOSO_DW_SCA_ONE_NG'
+    sqlProj: 'alexander-diab/CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE.sqlproj'
+    packageName: 'CONTOSO_DW_SCA_NG'
     tempServerTypeBuild: 'localDB'
     nugetPackageVersionSelector: 'Specific'
     nugetPackageVersion: '1.0'
-    nugetPackageVersionUseBuildId: true
     requiredVersionOfDlma: 'latest'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
 
-trigger:
-- master
 
-pool:
-  vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-- task: RedgateSqlChangeAutomationBuild@4
-  inputs:
-    operation: 'Publish'
-    packageIdPublish: 'CONTOSO_DW_SCA_ONE'
-    nugetPackageVersionSelector: 'Specific'
-    nugetPackageVersion: '1.0'
-    requiredVersionOfDlma: 'latest'
+
+    
