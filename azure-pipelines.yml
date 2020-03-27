@@ -1,0 +1,15 @@
+- task: RedgateSqlChangeAutomationBuild@4
+  inputs:
+    operation: 'Build SQL Change Automation Project'
+    sqlProj: 'alexander-diab/CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE.sqlproj'
+    packageName: 'CONTOSO_DW_SCA_NG'
+    tempServerTypeBuild: 'localDB'
+    nugetPackageVersionSelector: 'Specific'
+    nugetPackageVersion: '1.0'
+    requiredVersionOfDlma: 'latest'
+
+
+
+
+
+    

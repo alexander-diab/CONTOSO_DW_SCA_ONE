@@ -1,0 +1,45 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# there are three types of triggers: pull triggers, scheduled triggers 
+# and the standard, which is specified with the "trigger" keyword
+# specify at least one branch, which triggers, 
+# when this branch is pushed 
+
+trigger:
+- master
+
+# pool specifies, on which agents the pipeline jobs can run
+pool:
+#  vmImage: 'windows-latest'
+  name: 'Default'
+
+# steps lists all the single steps the agent
+# execute
+# script executes some code in a dos cli
+# task is a description of all tasks, which are installed
+# on the left side of this pane
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+# This task is the SCA builder and publisher of the 
+# nuget package
+- task: RedgateSqlChangeAutomationBuild@4
+  inputs:
+    operation: 'Build SQL Change Automation Project'
+    sqlProj: 'CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE.sqlproj'
+    packageName: 'CONTOSO_DW_SCA_ONE'
+    tempServerTypeBuild: 'localDB'
+    nugetPackageVersionSelector: 'Specific'
+    nugetPackageVersion: '1.0'
+    requiredVersionOfDlma: 'latest'
+
+
