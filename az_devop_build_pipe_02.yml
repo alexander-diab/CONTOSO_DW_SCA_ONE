@@ -16,7 +16,11 @@ pool:
   vmImage: 'windows-latest'
 
 
-
+# steps lists all the single steps the agent
+# execute
+# script executes some code in a dos cli
+# task is a description of all tasks, which are installed
+# on the left side of this pane
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -26,6 +30,8 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
+# This task is the SCA builder and publisher of the 
+# nuget package
 - task: RedgateSqlChangeAutomationBuild@4
   inputs:
     operation: 'Build SQL Change Automation Project'
