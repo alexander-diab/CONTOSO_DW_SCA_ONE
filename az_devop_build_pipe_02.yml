@@ -33,15 +33,15 @@ steps:
 # This task is the SCA builder and publisher of the 
 # nuget package
 # tried with a localdb and failed
-- task: RedgateSqlChangeAutomationBuild@4
-  inputs:
-    operation: 'Build SQL Change Automation Project'
-    sqlProj: 'CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE.sqlproj'
-    packageName: 'CONTOSO_DW_SCA_ONE'
-    tempServerTypeBuild: 'localDB'
-    nugetPackageVersionSelector: 'Specific'
-    nugetPackageVersion: '1.0'
-    requiredVersionOfDlma: 'latest'
+#- task: RedgateSqlChangeAutomationBuild@4
+#  inputs:
+#    operation: 'Build SQL Change Automation Project'
+#    sqlProj: 'CONTOSO_DW_SCA_ONE/CONTOSO_DW_SCA_ONE.sqlproj'
+#    packageName: 'CONTOSO_DW_SCA_ONE'
+#    tempServerTypeBuild: 'localDB'
+#    nugetPackageVersionSelector: 'Specific'
+#    nugetPackageVersion: '1.0'
+#    requiredVersionOfDlma: 'latest'
 
 # trying it with a proper sql server as build server 
 - task: RedgateSqlChangeAutomationBuild@4
