@@ -3,11 +3,19 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+# there are three types of triggers: pull triggers, scheduled triggers 
+# and the standard, which is specified with the "trigger" keyword
+# specify at least one branch, which triggers, 
+# when this branch is pushed 
+
 trigger:
 - master
 
+# pool specifies, on which agents the pipeline jobs can run
 pool:
   vmImage: 'windows-latest'
+
+
 
 steps:
 - script: echo Hello, world!
