@@ -13,7 +13,7 @@ trigger:
 
 # pool specifies, on which agents the pipeline jobs can run
 pool:
-vmImage: 'windows-latest'
+  vmImage: 'windows-latest'
 #  name: 'Default'
 
 # steps lists all the single steps the agent
