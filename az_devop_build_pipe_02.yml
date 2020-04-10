@@ -48,10 +48,15 @@ steps:
   inputs:
     operation: 'Build SQL Change Automation Project'
     packageName: contoso_ng
-    tempServerTypeBuild: 'sqlServer'
-    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS'
-    tempDatabaseNameBuild: 'CONTOSO_TEMP'
+#    tempServerTypeBuild: 'sqlServer'
+    tempServerTypeBuild: 'localDB'
+#    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS'
+#    tempDatabaseNameBuild: 'CONTOSO_TEMP'
     authMethodBuild: 'windowsAuth'
     nugetPackageVersionSelector: 'Specific'
     nugetPackageVersion: '1.0'
     requiredVersionOfDlma: 'latest'
+
+
+
+
