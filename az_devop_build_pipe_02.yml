@@ -33,6 +33,7 @@ steps:
 # This task is the SCA builder and publisher of the 
 # nuget package
 # tried with a localdb and failed
+# This section is for the az vmware agent
 #- task: RedgateSqlChangeAutomationBuild@4
 #  inputs:
 #    operation: 'Build SQL Change Automation Project'
@@ -44,14 +45,14 @@ steps:
 #    requiredVersionOfDlma: 'latest'
 
 # trying it with a proper sql server as build server 
+# this section is for the local agent on SLS-LT-ALEXD2
 - task: RedgateSqlChangeAutomationBuild@4
   inputs:
     operation: 'Build SQL Change Automation Project'
-    packageName: contoso_ng
-#    tempServerTypeBuild: 'sqlServer'
-    tempServerTypeBuild: 'localDB'
-#    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS'
-#    tempDatabaseNameBuild: 'CONTOSO_TEMP'
+    packageName: 'CONTOSO_DW_SCA_ONE'
+    tempServerTypeBuild: 'sqlServer'
+    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS\'
+    tempDatabaseNameBuild: 'CONTOSO_TEMP'
     authMethodBuild: 'windowsAuth'
     nugetPackageVersionSelector: 'Specific'
     nugetPackageVersion: '1.0'
