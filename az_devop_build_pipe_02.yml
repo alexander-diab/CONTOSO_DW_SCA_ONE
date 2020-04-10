@@ -47,7 +47,7 @@ steps:
 - task: RedgateSqlChangeAutomationBuild@4
   inputs:
     operation: 'Build SQL Change Automation Project'
-    packageName: 
+    packageName: contoso_ng
     tempServerTypeBuild: 'sqlServer'
     tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS'
     tempDatabaseNameBuild: 'CONTOSO_TEMP'
@@ -55,3 +55,15 @@ steps:
     nugetPackageVersionSelector: 'Specific'
     nugetPackageVersion: '1.0'
     requiredVersionOfDlma: 'latest'
+
+
+- task: RedgateSqlChangeAutomationBuild@4
+  inputs:
+    operation: 'Build SQL Change Automation Project'
+    sqlProj: 'contproj'
+    packageName: 'contng'
+    tempServerTypeBuild: 'localDB'
+    nugetPackageVersionSelector: 'Specific'
+    nugetPackageVersion: '1.0'
+    requiredVersionOfDlma: 'latest'
+
