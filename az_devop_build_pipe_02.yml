@@ -51,7 +51,7 @@ steps:
     operation: 'Build SQL Change Automation Project'
     packageName: 'CONTOSO_DW_SCA_ONE'
     tempServerTypeBuild: 'sqlServer'
-    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS\'
+    tempServerNameBuild: 'SLS-LT-ALEXD2\SQLEXPRESS'
     tempDatabaseNameBuild: 'CONTOSO_TEMP'
     authMethodBuild: 'windowsAuth'
     nugetPackageVersionSelector: 'Specific'
