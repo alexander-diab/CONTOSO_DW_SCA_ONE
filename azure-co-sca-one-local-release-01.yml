@@ -26,8 +26,8 @@ steps:
 - task: RedgateSqlChangeAutomationRelease@4
   inputs:
     Operation: 'Create'
-    NuGetFile: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE\CONTOSO_DW_SCA_ONE.1.0.nupkg'
-    ExportPath: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE'
+    NuGetFile: 'C:\adiab\az-agent\release-art-in\CONTOSO_DW_SCA_ONE\CONTOSO_DW_SCA_ONE.1.0.nupkg'
+    ExportPath: 'C:\adiab\az-agent\release-art-out\CONTOSO_DW_SCA_ONE'
     AppendEnvironment: false
     SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
     SourceDatabasePassword: 'AllesAufStop.'
