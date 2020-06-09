@@ -32,6 +32,8 @@ steps:
     SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
     SourceDatabasePassword: 'AllesAufStop.'
     TargetDatabaseConnectionType: 'explicit'
+    TargetDatabaseServer: 'SLS-LT-ALEXD2\SQLEXPRESS'
+    TargetDatabaseName: 'CONTOSO_DW_PROD_ONE'
     TargetAuthMethod: 'windowsAuth'
     DeleteFilesInExportFolder: false
     TransactionIsolationLevel: 'serializable'
