@@ -39,15 +39,15 @@ steps:
     requiredVersionOfDlma: 'latest'
 
 
-- task: RedgateSqlChangeAutomationRelease@4
-  inputs:
-    Operation: 'DeployFromResources'
-    ImportPath: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE'
-    SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
-    SourceDatabasePassword: 'AllesAufStop.'
-    TargetDatabaseConnectionType: 'explicit'
-    TargetDatabaseServer: 'SLS-LT-ALEXD2\SQLEXPRESS'
-    TargetDatabaseName: 'CONTOSO_DW_PROD_ONE'
-    TargetAuthMethod: 'windowsAuth'
-    requiredVersionOfDlma: 'latest'
+#- task: RedgateSqlChangeAutomationRelease@4
+#  inputs:
+#    Operation: 'DeployFromResources'
+#    ImportPath: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE'
+#    SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
+#    SourceDatabasePassword: 'AllesAufStop.'
+#    TargetDatabaseConnectionType: 'explicit'
+#    TargetDatabaseServer: 'SLS-LT-ALEXD2\SQLEXPRESS'
+#    TargetDatabaseName: 'CONTOSO_DW_PROD_ONE'
+#    TargetAuthMethod: 'windowsAuth'
+#    requiredVersionOfDlma: 'latest'
 
