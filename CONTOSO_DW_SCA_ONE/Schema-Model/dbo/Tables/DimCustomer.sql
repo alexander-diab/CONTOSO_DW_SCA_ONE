@@ -28,7 +28,9 @@ CREATE TABLE [dbo].[DimCustomer]
 [CompanyName] [nvarchar] (100) NULL,
 [ETLLoadID] [int] NULL,
 [LoadDate] [datetime] NULL,
-[UpdateDate] [datetime] NULL
+[UpdateDate] [datetime] NULL,
+[twitter] [nchar] (10) NULL,
+[facebook] [nchar] (10) NULL
 )
 GO
 ALTER TABLE [dbo].[DimCustomer] ADD CONSTRAINT [PK_DimCustomer_CustomerKey] PRIMARY KEY CLUSTERED  ([CustomerKey])
