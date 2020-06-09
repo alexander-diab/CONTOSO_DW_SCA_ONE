@@ -1,0 +1,53 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+
+# variables, which can be used for the agent here:
+# https://docs.microsoft.com/en-us/azure/devops/pipelines/release/variables?view=azure-devops&tabs=batch
+
+
+- task: RedgateSqlChangeAutomationRelease@4
+  inputs:
+    Operation: 'Create'
+    NuGetFile: '$(System.DefaultWorkingDirectory)/CO_SCA_ONE_REL_ART/CONTOSO_DW_SCA_ONE.Database.1.0.$(Build.BuildId).nupkg'
+    ExportPath: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE'
+    AppendEnvironment: false
+    SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
+    SourceDatabasePassword: 'AllesAufStop.'
+    TargetDatabaseConnectionType: 'explicit'
+    TargetAuthMethod: 'windowsAuth'
+    DeleteFilesInExportFolder: false
+    TransactionIsolationLevel: 'serializable'
+    AbortOnWarning: 'none'
+    requiredVersionOfDlma: 'latest'
+
+
+- task: RedgateSqlChangeAutomationRelease@4
+  inputs:
+    Operation: 'DeployFromResources'
+    ImportPath: 'C:\adiab\az-agent\release-art-repos\CONTOSO_DW_SCA_ONE'
+    SourceDatabaseUsername: 'RED-GATE\Alexander.Diab'
+    SourceDatabasePassword: 'AllesAufStop.'
+    TargetDatabaseConnectionType: 'explicit'
+    TargetDatabaseServer: 'SLS-LT-ALEXD2\SQLEXPRESS'
+    TargetDatabaseName: 'CONTOSO_DW_PROD_ONE'
+    TargetAuthMethod: 'windowsAuth'
+    requiredVersionOfDlma: 'latest'
+
