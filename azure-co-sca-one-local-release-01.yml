@@ -24,9 +24,9 @@ steps:
 
 
 - task: DeleteFiles@1
-    SourceFolder: C:\adiab\az-agent\release-art-out\CONTOSO_DW_SCA_ONE
+  inputs:
+    SourceFolder: 'C:\adiab\az-agent\release-art-out\CONTOSO_DW_SCA_ONE'
     Contents: '**/*'
-
 
 - task: RedgateSqlChangeAutomationRelease@4
   inputs:
