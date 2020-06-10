@@ -30,7 +30,8 @@ CREATE TABLE [dbo].[DimCustomer]
 [LoadDate] [datetime] NULL,
 [UpdateDate] [datetime] NULL,
 [twitter] [nchar] (10) NULL,
-[facebook] [nchar] (10) NULL
+[facebook] [nchar] (10) NULL,
+[instagram] [nchar] (10) NULL
 )
 GO
 ALTER TABLE [dbo].[DimCustomer] ADD CONSTRAINT [PK_DimCustomer_CustomerKey] PRIMARY KEY CLUSTERED  ([CustomerKey])
