@@ -23,6 +23,11 @@ steps:
 # https://docs.microsoft.com/en-us/azure/devops/pipelines/release/variables?view=azure-devops&tabs=batch
 
 
+- task: DeleteFiles@1
+    SourceFolder: C:\adiab\az-agent\release-art-out\CONTOSO_DW_SCA_ONE
+    Contents: '**/*'
+
+
 - task: RedgateSqlChangeAutomationRelease@4
   inputs:
     Operation: 'Create'
